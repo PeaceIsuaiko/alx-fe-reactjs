@@ -10,3 +10,6 @@ export const UserProvider = ({ children }) => {
 };
 
 export const useUser = () => useContext(UserContext);
+
+
+export default UserContext;
