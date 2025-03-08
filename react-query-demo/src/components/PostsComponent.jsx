@@ -14,7 +14,7 @@ function PostsComponent()  {
         staleTime: 60000,
         cacheTime: 300000,
         refetchOnWindowFocus: false,
-        keepPrevousData: true,
+        keepPreviousData: true,
     });
    if (isLoading) return <p>Loading posts.......</p>
    if (isError)  return <p>Error: {error.message}</p>
