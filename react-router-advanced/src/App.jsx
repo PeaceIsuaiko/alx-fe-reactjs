@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
-import Home from "./componenets/Home.jsx";
-import About from "./componenets/About.jsx";
-import Profile from "./componenets/Profile.jsx";
-import ProfileDetails from "./componenets/Profile/ProfileDetails.jsx";
-import ProfileSettings from "./componenets/Profile/ProfileSettings.jsx";
+import Home from "./components/Home.jsx";
+import About from "./components/About.jsx";
+import Profile from "./components/Profile.jsx";
+import ProfileDetails from "./components/profile/ProfileDetails.jsx";
+import ProfileSettings from "./components/profile/ProfileSettings.jsx";
 
 
 
