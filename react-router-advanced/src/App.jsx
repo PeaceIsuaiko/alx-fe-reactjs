@@ -16,6 +16,7 @@ function App() {
         <Link to= "/" Home></Link>
         <Link to= "/" About></Link>
         <Link to= "/" Profile></Link>
+        <Link to="/profile/settings">Profile Settings</Link>
       </nav>
 
       <Routes>
@@ -23,8 +24,7 @@ function App() {
         <Route path="/about" element={<About/>}/>
         <Route path="/profile/*" element={<Profile/>}/>
              {/* Nested Routes */}
-             <Route path="details" element={<ProfileDetails/>}></Route>
-             <Route path="settings" element={<ProfileSettings/>}></Route>
+             <Route path="/profile/settings" element={<ProfileSettings/>}></Route>
       </Routes>
     </Router>
   )
