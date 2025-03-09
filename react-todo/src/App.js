@@ -1,9 +1,8 @@
 import React from "react";
-import TodoList from "./components/TodoList";
+import { render, screen } from "@testing-library/react";
+import TodoList from "./components/TodoList"; // ✅ Corrected import path
 
-
-
-function App()  {
+function App() {
   return (
     <div>
       <h1>React Todo App</h1>
