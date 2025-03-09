@@ -1,11 +1,13 @@
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
-const Login = ({ setIsAuthenticated }) => {
+const Login = () => {
+  const { login } = useAuth();
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    setIsAuthenticated(true);
-    navigate("/profile");
+    login();
+    navigate("/profile"); // Redirect to profile after login
   };
 
   return (
