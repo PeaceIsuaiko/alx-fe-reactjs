@@ -1,6 +1,5 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
-import TodoList from "./components/TodoList"; // ✅ Corrected import path
+import TodoList from "./components/TodoList";
 
 function App() {
   return (
