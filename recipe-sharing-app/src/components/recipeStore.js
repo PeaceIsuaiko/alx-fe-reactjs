@@ -20,7 +20,24 @@ const useRecipeStore = create((set) => ({
       recipe.title.toLowerCase().includes(state.searchTerm.toLowerCase())
     )
   })),
+   
 
+
+   //  Function to update an existing recipe
+   updateRecipe: (id, updatedRecipe) => set((state) => ({
+    recipes: state.recipes.map((recipe) =>
+      recipe.id === id ? { ...recipe, ...updatedRecipe } : recipe
+    ),
+    filteredRecipes: state.filteredRecipes.map((recipe) =>
+      recipe.id === id ? { ...recipe, ...updatedRecipe } : recipe
+    ),
+  })),
+
+  //  Function to delete a recipe
+  deleteRecipe: (id) => set((state) => ({
+    recipes: state.recipes.filter((recipe) => recipe.id !== id),
+    filteredRecipes: state.filteredRecipes.filter((recipe) => recipe.id !== id),
+  })),
 
    //  Function to add a new recipe
    addRecipe: (newRecipe) =>
