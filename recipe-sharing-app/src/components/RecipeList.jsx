@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import useRecipeStore from '../store/recipeStore';
 
 const RecipeList = () => {
@@ -14,6 +15,8 @@ const RecipeList = () => {
               <h3>{recipe.title}</h3>
               <p><strong>Ingredients:</strong> {recipe.ingredients}</p>
               <p><strong>Time:</strong> {recipe.time}</p>
+              {/* Add Link to navigate to recipe details */}
+              <Link to={`/recipe/${recipe.id}`}>View Details</Link>
             </li>
           ))}
         </ul>
