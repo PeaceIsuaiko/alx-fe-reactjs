@@ -1,6 +1,7 @@
-import React from "react"; 
-import { render, screen, fireEvent } from "@testing-library/react"; 
-import TodoList from "./TodoList"; 
+import React from "react";
+import { render, screen, fireEvent } from "@testing-library/react";
+import "@testing-library/jest-dom/extend-expect";
+import TodoList from "../components/TodoList";
 
 test("renders the todo list", () => {
   render(<TodoList />);
@@ -9,8 +10,8 @@ test("renders the todo list", () => {
 
 test("adds a new todo", () => {
   render(<TodoList />);
-  const input = screen.getByPlaceholderText("Add a new task");
-  const button = screen.getByText("Add Todo");
+  const input = screen.getByPlaceholderText("Add a new todo...");
+  const button = screen.getByText("Add");
 
   fireEvent.change(input, { target: { value: "New Task" } });
   fireEvent.click(button);
@@ -24,14 +25,18 @@ test("toggles a todo", () => {
 
   fireEvent.click(todoItem);
 
-  expect(todoItem).toHaveClass("completed"); 
+  expect(todoItem).toHaveStyle("text-decoration: line-through");
+
+  fireEvent.click(todoItem);
+
+  expect(todoItem).not.toHaveStyle("text-decoration: line-through");
 });
 
 test("deletes a todo", () => {
   render(<TodoList />);
-  const deleteButton = screen.getAllByText("Delete")[0];
+  const deleteButton = screen.getByTestId("delete-1");
 
   fireEvent.click(deleteButton);
 
-  expect(deleteButton).not.toBeInTheDocument();
+  expect(screen.queryByText("Learn React")).not.toBeInTheDocument();
 });
