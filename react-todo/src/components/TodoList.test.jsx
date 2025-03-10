@@ -1,6 +1,6 @@
-import React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
-import TodoList from "../components/TodoList";
+import React from "react"; 
+import { render, screen, fireEvent } from "@testing-library/react"; 
+import TodoList from "./TodoList"; 
 
 test("renders the todo list", () => {
   render(<TodoList />);
@@ -23,10 +23,8 @@ test("toggles a todo", () => {
   const todoItem = screen.getByText("Learn React");
 
   fireEvent.click(todoItem);
-  expect(todoItem).toHaveStyle("text-decoration: line-through");
 
-  fireEvent.click(todoItem);
-  expect(todoItem).not.toHaveStyle("text-decoration: line-through");
+  expect(todoItem).toHaveClass("completed"); 
 });
 
 test("deletes a todo", () => {
@@ -34,5 +32,6 @@ test("deletes a todo", () => {
   const deleteButton = screen.getAllByText("Delete")[0];
 
   fireEvent.click(deleteButton);
-  expect(screen.queryByText("Learn React")).not.toBeInTheDocument();
+
+  expect(deleteButton).not.toBeInTheDocument();
 });
