@@ -21,6 +21,14 @@ const useRecipeStore = create((set) => ({
     )
   })),
 
+
+   //  Function to add a new recipe
+   addRecipe: (newRecipe) =>
+    set((state) => ({
+      recipes: [...state.recipes, newRecipe],
+      filteredRecipes: [...state.filteredRecipes, newRecipe],
+    })),
+
   //Favorites functionality
   favorites: [],
   addToFavorites: (recipe) =>
