@@ -1,13 +1,19 @@
-import { useState } from 'react'
 
-import './App.css'
+import React from 'react'
+import HomePage from './components/HomePage'
+
+
 
 function App() {
+
   
+
+
   return (
-<div className="text-center text-blue-500 text-3xl font-bold">
-      Recipe Sharing Platform
-    </div>
+      <div>
+        <HomePage/>
+      </div>
+
   )
 }
 
